@@ -5,6 +5,7 @@ import burgerBtn from "../../assets/hamburger-menu-icon.svg";
 import { useRouter } from "next/router"
 import { links } from "../../constants/links"
 
+
 type LinkType = {
     id: number;
     title: string;
@@ -12,24 +13,25 @@ type LinkType = {
   };
   
   type HeaderProps = {
-    logo: string;
+    logoPath: string;
     links: LinkType[];
   };
 
-  const Header = ({ logo, links =[] }: HeaderProps) => {
+  const Header = ({ logoPath, links }: HeaderProps) => {
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
 
   return (
     <div className={styles.container}>
-                <Link href="/" className={styles.logo} style={{ textDecoration: "none" }}>
-        {logo}
-      </Link>
+        <div className={styles.logo}>
+<img src={logoPath} alt="logo_img" />
+        </div>
+      
       <nav>
         <ul className={styles.links}>
           {links.map((link) => {
             return (
-              <a href={link.href} key={link.id}>
+              <a className={styles.aLink} href={link.href} key={link.id}>
                 {link.title}
               </a>
             );
@@ -37,7 +39,6 @@ type LinkType = {
         </ul>
       </nav>
 
- {/* iskelti elementa perpanaudojimui? */}
       <button
         onClick={() => setMobileMenuOpen((prevState) => !prevState)}
         className={styles.burgerBtn}
@@ -45,8 +46,7 @@ type LinkType = {
         <img src={burgerBtn.src} alt="burgerBTN" />
       </button>
 
-     {/* ===issikelti? */}
-      <div
+      {/* <div
         className={`${styles.mobileMenu}  ${
           isMobileMenuOpen && styles.mobileMenuOpen
         }`}
@@ -60,7 +60,7 @@ type LinkType = {
             );
           })}
         </ul>
-      </div>
+      </div> */}
 
     </div>
   )
