@@ -3,7 +3,7 @@ import styles from "./Header.module.css"
 import Link from "next/link";
 import burgerBtn from "../../assets/hamburger-menu-icon.svg";
 import { useRouter } from "next/router"
-import { links } from "../../constants/link"
+import { links } from "../../constants/links"
 
 type LinkType = {
     id: number;
@@ -16,7 +16,7 @@ type LinkType = {
     links: LinkType[];
   };
 
-  const Header = ({ logo, links }: HeaderProps) => {
+  const Header = ({ logo, links =[] }: HeaderProps) => {
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
 
