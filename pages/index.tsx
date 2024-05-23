@@ -1,9 +1,15 @@
 import React from 'react'
+import Header from "../components/Header/Header"
+import styles from "../styles/Home.module.css"
 
-const Index = () => {
+const index = () => {
   return (
-    <div>Index</div>
+
+
+    <div>
+      <Header/>
+    </div>
   )
 }
 
-export default Index
+export default index
