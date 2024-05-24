@@ -19,16 +19,12 @@ const Header = ({ logo, links }: HeaderProps) => {
 
   return (
     <div className={styles.container}>
-<Link href="/">
+<Link className={styles.link} href="/">
 </Link>
        
       <nav>
         <ul className={styles.links}>
           
-            <h1>header: logo and nav link here</h1>
-
-            <nav>
-        <ul className={styles.links}>
           {links.map((link) => {
             return (
               <Link key={link.id} href={link.href}>
@@ -40,12 +36,6 @@ const Header = ({ logo, links }: HeaderProps) => {
         </ul>
       </nav>
     
-        </ul>
-      </nav>
-
-    
-
-
     </div>
   )
 }

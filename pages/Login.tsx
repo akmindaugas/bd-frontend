@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styles from "./LoginPage/LoginPage.module.css"
+import styles from "./LoginPage/Login.module.css"
 import PageTemplate from '../components/PageTemplate/PageTemplate'
 
 
