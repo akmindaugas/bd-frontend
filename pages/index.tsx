@@ -14,11 +14,7 @@ const index = () => {
         <Link href="/add-question">Add Question</Link>
       </div>
 
-      {/* {games && <CardsWrapper games={games} />} */}
-
-
-
-</PageTemplate>
+  </PageTemplate>
 
 
   )
