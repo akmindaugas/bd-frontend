@@ -1,9 +1,12 @@
 export type QuestionType = {
-    id:  String;
-    title:  String;
-    user:  String;
-    content:  String;
-    photoUrl:  String;
-    like:  Number;
-    dislike:  Number;
-    answers: Boolean;}
+   
+      id:  String; 
+      title:  String;
+      content: String;
+      photoUrl: String;
+      userId: String;
+      createdAt: Date;
+      updatedAt: Date;
+      votesUp:  Number;
+      votesDown: Number;
+   }
