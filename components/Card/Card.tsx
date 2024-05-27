@@ -1,9 +1,8 @@
 import React from 'react'
 import styles from "./Card.module.css"
+import Link from 'next/link';
 
-
-interface QuestionProps {
-  question: {
+type  QuestionProps = {
     id:  String; 
     title:  String;
     content: String;
@@ -14,31 +13,31 @@ interface QuestionProps {
     votesUp:  Number;
     votesDown: Number;
   };
-}
 
-const Card: React.FC<QuestionProps> = ({ question }) => {
+const Card = ({ id, title, content, photoUrl, userId,createdAt, 
+  updatedAt,votesUp, votesDown}: QuestionProps) => {
   // del FunctionalComponent?
   return (
-    <div className={styles.container}>
+    <Link href={`/question/${id}`}  className={styles.container}>
       <div className={styles.cardTitle}>
-        <h3>{question.title}</h3>
+        <h3>{title}</h3>
       </div>
       <div className={styles.cardContent}>
-        <p>{question.content}</p>
+        <p>{content}</p>
       </div>
     <div className={styles.cardImg}>
-<img src={question.photoUrl}> </img>
+<img src={photoUrl}> </img>
     </div>
     <div className={styles.cardVotes}>
       <div>
-        <p>{String(question.votesUp)}</p>
+        <p>{String(votesUp)}</p>
       </div>
       <div>
-        <p>{String(question.votesDown)}</p>
+        <p>{String(votesDown)}</p>
       </div>
 
     </div>
-    </div>
+    </Link>
   );
 };
 
